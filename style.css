@@ -1,0 +1,193 @@
+/* Configurações Globais e Variáveis */
+:root {
+    --cor-fundo: #0c0c0e;
+    --cor-texto: #ffffff;
+    --cor-botao: #1b8633; /* Verde, mude se quiser */
+    --cor-botao-hover: #22a840;
+    --cor-caixa-bio: #1a1a1a;
+    --cor-marquee: #111111;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* A fonte do original é Roboto */
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    text-align: center;
+    overflow-x: hidden; /* Impede scroll horizontal */
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Classe de Texto em Degradê */
+.degrade {
+    background: linear-gradient(90deg, #ffc928, #f84333); /* Degradê do original */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 1. HERO */
+.hero {
+    /* Imagem de fundo opcional, como no original */
+    /* background-image: url('sua-imagem-de-fundo.webp'); */
+    background-size: cover;
+    background-position: center;
+    padding-top: 40px;
+    border-bottom: 2px solid var(--cor-marquee);
+}
+
+.hero .logo {
+    max-width: 250px; /* Ajuste o tamanho do seu logo */
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+}
+
+.hero .sub-info {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Botão de CTA (Call to Action) */
+.cta-button {
+    display: inline-block;
+    background-color: var(--cor-botao);
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 18px 35px;
+    border-radius: 8px;
+    margin-top: 25px;
+    transition: background-color 0.3s ease;
+    animation: pulse 1.5s infinite; /* Efeito de pulsar */
+}
+
+.cta-button:hover {
+    background-color: var(--cor-botao-hover);
+    animation: none;
+}
+
+/* Animação de pulsar para o botão */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+
+/* 2. MARQUEE (FAIXA ROLANTE) */
+.marquee {
+    background-color: var(--cor-marquee);
+    padding: 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: scroll 20s linear infinite;
+    font-weight: bold;
+    color: #888;
+}
+
+.marquee-content span {
+    margin: 0 15px;
+    color: var(--cor-texto);
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* 3. SEÇÃO DE RESULTADOS */
+.resultados {
+    background-color: #121214; /* Um pouco diferente do fundo */
+}
+
+.galeria-resultados {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.galeria-resultados img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+/* 5. SEÇÃO DE BIOGRAFIA */
+.bio p {
+    margin-bottom: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bio .bio-destaque {
+    background-color: var(--cor-caixa-bio);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.bio .bio-destaque p {
+    margin-bottom: 0;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+/* 6. RODAPÉ */
+footer {
+    padding: 30px 20px;
+    background-color: var(--cor-fundo);
+    color: #777;
+    font-size: 0.9rem;
+    border-top: 1px solid #222;
+}
+
+/* Ajustes para Celular (Mobile) */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    /* Galeria com 2 colunas no celular */
+    .galeria-resultados {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
